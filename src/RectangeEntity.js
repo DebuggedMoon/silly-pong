@@ -1,4 +1,6 @@
+import Entity from "./Entity.js";
 import Vector2 from "./lib/Vector2.js";
+import AffectedByGravity from "./PhysicsBehavior/AffectedByGravity.js";
 
 
 /**
@@ -6,19 +8,23 @@ import Vector2 from "./lib/Vector2.js";
  * @class
  * @constructor
  */
-export default class RectangeEntity {
+export default class RectangeEntity extends Entity{
 
 	/**
 	 * @param {Vector2} position 
 	 * @param {Vector2} size 
 	 */
 	constructor(position, size) {
-		/**
-		 * @type {Vector2}
-		 * @field
-		 * 
-		 */
-		this.position = position;
+
+		super(
+			position, 
+			new Vector2(0, 0), 
+			new AffectedByGravity(
+				new Vector2(250, 1000),
+				100
+			)
+		)
+
 		/**
 		 * @type {Vector2}
 		 * @field
@@ -29,6 +35,7 @@ export default class RectangeEntity {
 
 	/**
 	 * @param {CanvasRenderingContext2D} context 
+	 * @override
 	 */
 	render(context) {
 		context.fillStyle = "Blue";
