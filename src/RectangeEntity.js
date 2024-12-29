@@ -34,6 +34,19 @@ export default class RectangeEntity extends Entity{
 	}
 
 	/**
+	 * @returns {Vector2}
+	 */
+	getSize() {
+		return this.size;
+	}
+
+	/**
+	 * @param {Vector2} position
+	 */
+	setSize(size) {
+		this.size = size;
+	}
+	/**
 	 * @param {CanvasRenderingContext2D} context 
 	 * @override
 	 */
