@@ -1,3 +1,4 @@
+import Vector2 from "./lib/Vector2.js";
 
 
 /**
@@ -8,11 +9,21 @@
 export default class RectangeEntity {
 
 	/**
-	 * @param {object} position 
-	 * @param {object} size 
+	 * @param {Vector2} position 
+	 * @param {Vector2} size 
 	 */
 	constructor(position, size) {
+		/**
+		 * @type {Vector2}
+		 * @field
+		 * 
+		 */
 		this.position = position;
+		/**
+		 * @type {Vector2}
+		 * @field
+		 * 
+		 */
 		this.size = size;
 	}
 

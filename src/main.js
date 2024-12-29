@@ -1,3 +1,4 @@
+import Vector2 from "./lib/Vector2.js";
 import RectangeEntity from "./RectangeEntity.js";
 
 /**
@@ -10,7 +11,7 @@ const gameCanvas = document.querySelector("#game-viewport");
 */
 const canvasContext = gameCanvas.getContext("2d")
 
-const rectangle = new RectangeEntity({x: 200, y: 200}, {x: 200, y: 200});
+const rectangle = new RectangeEntity(new Vector2(200, 200), new Vector2(200, 200));
 
 function drawFrame() {
 
