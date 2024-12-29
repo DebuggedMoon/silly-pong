@@ -1,0 +1,31 @@
+
+/* <=====| Global Styles |=====> */
+
+:root {
+	--background-color-primary: black;
+}
+
+body {
+	background-color: var(--background-color-primary);
+
+	margin: 0;
+}
+
+/* <=====| Main Styles |=====> */
+
+main {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100dvh;
+	width: 100dvw;
+
+}
+
+canvas {
+	aspect-ratio: 16 / 9;
+	width: 65%;
+	background-color: wheat;
+}
