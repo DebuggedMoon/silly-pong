@@ -1,4 +1,4 @@
-import Entity from "../Entity.j";
+import Entity from "../Entity.js";
 
 /**
  * @interface
