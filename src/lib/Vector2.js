@@ -6,8 +6,6 @@
  */
 export default class Vector2 {
 
-
-
 	/**
 	 * 
 	 * @param {number} x 
