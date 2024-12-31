@@ -56,7 +56,11 @@ export class PongGame {
 		 * @private
 		 */
 		this.rectangeEntities = [
-			this.playerEntity
+			this.playerEntity,
+			new RectangeEntity(
+				new Vector2(900, 0),
+				new Vector2(100, 20)
+			)
 		];
 
 	}
@@ -130,7 +134,6 @@ export class PongGame {
 		for (const entity of this.rectangeEntities) {
 
 			entity.simulate(deltaTime / 1000);
-			console.log("Simulating")
 	
 		}
 		
@@ -143,7 +146,6 @@ export class PongGame {
 
 		for (const entity of this.rectangeEntities) {
 
-			this.canvasContext.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
 			entity.render(this.canvasContext);	
 	
 		}
@@ -171,6 +173,8 @@ export class PongGame {
 	
 				this._doSimulations(lastFrameTime);
 				this._doViewportCollisions();
+
+				this.canvasContext.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
 				this._drawEntities();
 	
 				lastFrameTime = Math.max(
