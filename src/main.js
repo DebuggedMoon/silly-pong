@@ -1,4 +1,4 @@
-import { BindableEvent } from "./lib/BindableEvent.js";
+import { CustomBindableEvent } from "./lib/CustomBindableEvent.js";
 import { PongGame } from "./PongGame.js";
 
 const FRAMERATE = 24;
@@ -9,23 +9,18 @@ const FRAMERATE = 24;
 const gameCanvas = document.querySelector("#game-viewport");
 const pongGame = new PongGame(gameCanvas, FRAMERATE);
 
-const keydownEvent = new BindableEvent("keydown");
-const connection = keydownEvent.connect(
-	/**
-	 * 
-	 * @param {KeyboardEvent} input 
-	 */
-	input => {
-		console.log(input.key)
-	}
+const testEvent = new CustomBindableEvent("custom_test");
+const testConnection = testEvent.connect((...args) => console.log(...args));
+
+setInterval(
+	() => testEvent.fire("HAHHAHA", 123, false),
+	1000
 )
 
 setTimeout(
-	() => {
-		connection.disconnect()
-		console.log("DICONNECTED")
-	},
-	5000
+	() => testConnection.disconnect(),
+	6000
 )
+
 
 pongGame.initialize();
