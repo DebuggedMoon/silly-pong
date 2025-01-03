@@ -98,6 +98,7 @@ export class BindableEvent {
 			)
 		}
 
+		this.connections.delete(connection);
 	}
 
 }
